@@ -5,13 +5,13 @@ def criar_atividade(array_atividades):
     titulo = input("Digite o título da atividade: ")
     descricao = input("Digite a descrição da atividade: ")
     data = input("Digite a data de conclusão (dd/mm/aaaa): ")
-    status = input("A atividade está concluída? (sim/não): ")
+    status = input("A atividade está concluída? (sim/não): ").lower()
 
     atividade = {
         "titulo": titulo,
         "descricao": descricao,
         "data": data,
-        "status": status.lower() == "sim"  # Armazena True ou False
+        "status": status == "sim"
     }
 
     array_atividades.append(atividade)
