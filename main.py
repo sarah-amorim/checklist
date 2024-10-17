@@ -1,8 +1,7 @@
 from usuarios.cadastrar_usuarios import cadastrar_usuarios
 from autenticar.login import login
-from configuracoes.limpar_tela import limpar_tela
+from limpar_tela.limpar_tela import limpar_tela
 from checklist.checklist_main import *
-# from checklist.CRUD import *
 
 usuarios = []
 
@@ -14,7 +13,7 @@ while True:
     try:
         opcao = int(input("Escolha a ação que deseja executar: "))
     except ValueError:
-        print("Digite uma opção válida!")
+        print("Digite uma opção válida!\n")
         opcao = int(input("Escolha a ação que deseja executar: "))
         break
 
@@ -24,6 +23,11 @@ while True:
         limpar_tela()
 
     elif opcao == 2:
-        login(users=usuarios)
-        limpar_tela()
-        checklist(users=usuarios)
+        if not usuarios:
+            print("Para fazer login é necessário cadastrar um usuário!\n")
+            cadastrar_usuarios(users=usuarios)
+            limpar_tela()
+        else:
+            login(users=usuarios)
+            limpar_tela()
+            checklist(users=usuarios)
