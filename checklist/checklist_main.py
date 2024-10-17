@@ -29,8 +29,8 @@ def checklist(users):
             limpar_tela()
 
         elif opcao == 2:
-            visualizar_atividades(atividades)
             limpar_tela()
+            visualizar_atividades(atividades)
 
         elif opcao == 3:
             atualizar_atividade(atividades)

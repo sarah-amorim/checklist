@@ -63,12 +63,10 @@ def atualizar_atividade(array_atividades):
 def deletar_tarefas(array_atividades):
     visualizar_atividades(array_atividades)
 
-    while True:
-        try:
-            indice = int(input("Digite o índice da tarefa que deseja excluir: "))
-        except ValueError:
-            print("Digite uma opção válida!")
-            continue
+    try:
+        indice = int(input("Digite o índice da tarefa que deseja excluir: "))
+    except ValueError:
+        print("Digite uma opção válida!")
 
     indice_ajustado = indice - 1
 
