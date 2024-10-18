@@ -15,9 +15,7 @@ def login(users):
 
     for user in users:
         if user["email"] == email and user["senha"] == senha:
-            nome = user["nome"]
-            print(f"Olá, {nome}!\n")
-            break
+            print("Usuário encontrado")
         else:
             limpar_tela()
             print("Usuário não encontrado, tente novamente!\n")
